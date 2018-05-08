@@ -61,10 +61,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\Cadastro\ClienteMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Cadastro\ClienteRepository.cs" />
+    <Compile Include="Repository\Commom\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PSOO.Domain\PSOO.Domain.csproj">
+      <Project>{2fad2a32-65af-4bc0-8ca0-5b51dfdb82b0}</Project>
+      <Name>PSOO.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

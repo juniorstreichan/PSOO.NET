@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PSOO.Domain.Interfaces.Cadastro
 {
-    public interface IClienteRepository : IRepositoryBase<Cliente>
-    {
+    public interface IClienteRepository : IRepositoryBase<Cliente>{
+
     }
 }
