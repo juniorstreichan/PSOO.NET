@@ -76,6 +76,8 @@
     <Compile Include="Interfaces\Common\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Common\IServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Cadastro\ClienteService.cs" />
+    <Compile Include="Services\Common\ServiceBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
