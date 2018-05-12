@@ -6,6 +6,7 @@ using PSOO.Domain.Services.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,7 +27,9 @@ namespace PSOO.Domain.Services.Cadastro
             _clienteValidator.SetService(this);
         }
 
-     
-
+        public void SetSession(ISession session)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

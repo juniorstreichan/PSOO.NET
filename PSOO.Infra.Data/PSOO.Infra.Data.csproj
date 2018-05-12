@@ -62,11 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\Cadastro\ClienteMap.cs" />
+    <Compile Include="Context\SessionFactory.cs" />
+    <Compile Include="Context\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Cadastro\ClienteRepository.cs" />
     <Compile Include="Repository\Commom\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

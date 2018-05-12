@@ -73,6 +73,7 @@
     <Compile Include="Interfaces\Cadastro\IClienteRepository.cs" />
     <Compile Include="Interfaces\Cadastro\IClienteService.cs" />
     <Compile Include="Interfaces\Cadastro\IClienteValidator.cs" />
+    <Compile Include="Interfaces\Common\IUnitOfWork.cs" />
     <Compile Include="Interfaces\Common\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Common\IServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

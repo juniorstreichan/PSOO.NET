@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PSOO.Infra.Data.Repository.Cadastro
 {
-    class ClienteRepository:RepositoryBase<Cliente>,IClienteRepository
+    public class ClienteRepository:RepositoryBase<Cliente>,IClienteRepository
     {
         public ClienteRepository()
         {

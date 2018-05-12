@@ -7,16 +7,16 @@ namespace PSOO.Infra.Data.Context
     {
         private ITransaction _transaction = null;
         private readonly ISessionFactory _sessionFactory = null;
-        private ISession _session = null;
+        private NHibernate.ISession _session = null;
 
         public UnitOfWork(ISessionFactory sessionFactory)
         {
             _sessionFactory = sessionFactory;
         }
 
-        public ISession Session => _session ?? (_session = _sessionFactory.OpenSession());
+        public NHibernate.ISession Session => _session ?? (_session = _sessionFactory.OpenSession());
 
-        public ISession BeginTransaction()
+        public NHibernate.ISession Begin()
         {
             var session = Session;
             _transaction = session.Transaction;
