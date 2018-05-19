@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace PSOO.Domain.Services.Cadastro
 {
-    class ClienteService :ServiceBase<Cliente>, IClienteService
+    public class ClienteService :ServiceBase<Cliente>, IClienteService
     {
 
         private readonly IClienteRepository _clienteRepository;

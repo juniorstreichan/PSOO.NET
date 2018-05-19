@@ -1,7 +1,4 @@
-﻿using FluentNHibernate.Cfg;
-using FluentNHibernate.Cfg.Db;
-using FluentNHibernate.Mapping;
-using NHibernate;
+﻿using NHibernate;
 using NHibernate.Metadata;
 using NHibernate.Stat;
 using System;
@@ -13,6 +10,8 @@ using System.Threading.Tasks;
 using NHibernate.Engine;
 using System.Data.Common;
 using System.Threading;
+using FluentNHibernate.Cfg.Db;
+using FluentNHibernate.Cfg;
 
 namespace PSOO.Infra.Data.Context
 {
@@ -119,7 +118,7 @@ namespace PSOO.Infra.Data.Context
             throw new NotImplementedException();
         }
 
-        public FluentNHibernate.Mapping.FilterDefinition GetFilterDefinition(string filterName)
+        public FilterDefinition GetFilterDefinition(string filterName)
         {
             throw new NotImplementedException();
         }
@@ -133,7 +132,7 @@ namespace PSOO.Infra.Data.Context
                 IPersistenceConfigurer configuracaoDb = MsSqlConfiguration.MsSql2012.ConnectionString(connectionString).ShowSql();
                 var configMap = Fluently.Configure()
                     .Database(configuracaoDb)
-                    .Mappings(c => c.FluentMappings.AddFromAssemblyOf<Config.Cadastro.ClienteMap>());
+                    .Mappings(c => c.FluentMappings.AddFromAssemblyOf<PSOO.Infra.Data.Config.Cadastro.ClienteMap>());
                 _sessionFactory = configMap.BuildSessionFactory();
             }
 
@@ -197,76 +196,6 @@ namespace PSOO.Infra.Data.Context
             Dispose(true);
             // TODO: uncomment the following line if the finalizer is overridden above.
             // GC.SuppressFinalize(this);
-        }
-
-        public Task CloseAsync(CancellationToken cancellationToken = default(CancellationToken))
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EvictAsync(Type persistentClass, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EvictAsync(Type persistentClass, object id, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EvictEntityAsync(string entityName, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EvictEntityAsync(string entityName, object id, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EvictCollectionAsync(string roleName, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EvictCollectionAsync(string roleName, object id, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EvictQueriesAsync(CancellationToken cancellationToken = default(CancellationToken))
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EvictQueriesAsync(string cacheRegion, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            throw new NotImplementedException();
-        }
-
-        public ISessionBuilder WithOptions()
-        {
-            throw new NotImplementedException();
-        }
-
-        public ISession OpenSession(DbConnection connection)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ISession OpenSession(DbConnection conn, IInterceptor sessionLocalInterceptor)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IStatelessSessionBuilder WithStatelessOptions()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IStatelessSession OpenStatelessSession(DbConnection connection)
-        {
-            throw new NotImplementedException();
         }
 
         NHibernate.Engine.FilterDefinition ISessionFactory.GetFilterDefinition(string filterName)

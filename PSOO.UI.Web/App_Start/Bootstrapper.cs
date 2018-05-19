@@ -3,6 +3,7 @@ using Autofac.Integration.Mvc;
 using NHibernate;
 using PSOO.Application.Interfaces.Cadastro;
 using PSOO.Application.Services.Cadastro;
+using PSOO.Domain.Entity.Cadastro;
 using PSOO.Domain.Interfaces.Cadastro;
 using PSOO.Domain.Interfaces.Common;
 using PSOO.Domain.Services.Cadastro;
@@ -39,8 +40,8 @@ namespace PSOO.UI.Web.App_Start
 
             #region Cadastro
 
-            builder.RegisterType<IClienteService>().As<IClienteService>().InstancePerRequest();
-
+            builder.RegisterType<ClienteService>().As<IClienteService>().InstancePerRequest();
+            builder.RegisterType<ClienteValidator>().As<IClienteValidator>().InstancePerRequest();
             #endregion Cadastro
 
             #endregion Domain Services
