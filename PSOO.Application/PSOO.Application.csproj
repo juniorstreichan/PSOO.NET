@@ -70,10 +70,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\Cadastro\MunicipioProfile.cs" />
     <Compile Include="AutoMapper\Cadastro\ClienteProfile.cs" />
+    <Compile Include="Interfaces\Cadastro\IMunicipioAppService.cs" />
     <Compile Include="Interfaces\Cadastro\IClienteAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Cadastro\MunicipioAppService.cs" />
     <Compile Include="Services\Cadastro\ClienteAppService.cs" />
+    <Compile Include="ViewModel\MunicipioViewModel.cs" />
     <Compile Include="ViewModel\ClienteViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
