@@ -69,15 +69,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Cadastro\Municipio.cs" />
     <Compile Include="Entity\Cadastro\Cliente.cs" />
     <Compile Include="Entity\Common\BaseClass.cs" />
+    <Compile Include="Interfaces\Cadastro\IMunicipioRepository.cs" />
     <Compile Include="Interfaces\Cadastro\IClienteRepository.cs" />
+    <Compile Include="Interfaces\Cadastro\IMunicipioService.cs" />
     <Compile Include="Interfaces\Cadastro\IClienteService.cs" />
+    <Compile Include="Interfaces\Cadastro\IMunicipioValidator.cs" />
     <Compile Include="Interfaces\Cadastro\IClienteValidator.cs" />
     <Compile Include="Interfaces\Common\IUnitOfWork.cs" />
     <Compile Include="Interfaces\Common\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Common\IServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Cadastro\MunicipioService.cs" />
     <Compile Include="Services\Cadastro\ClienteService.cs" />
     <Compile Include="Services\Common\ServiceBase.cs" />
   </ItemGroup>

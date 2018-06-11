@@ -216,6 +216,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Cliente\index.cshtml" />
     <Content Include="Views\Cliente\_ListaClientes.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\Cliente\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
