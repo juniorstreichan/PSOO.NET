@@ -31,6 +31,7 @@ namespace PSOO.UI.Web.App_Start
             #region Cadastro
 
             builder.RegisterType<ClienteAppService>().As<IClienteAppService>().InstancePerRequest();
+            builder.RegisterType<MunicipioAppService>().As<IMunicipioAppService>().InstancePerRequest();
 
             #endregion Cadastro
 
@@ -60,6 +61,7 @@ namespace PSOO.UI.Web.App_Start
             #region Cadastro
 
             builder.RegisterType<ClienteRepository>().As<IClienteRepository>().InstancePerRequest();
+            builder.RegisterType<MunicipioRepository>().As<IMunicipioRepository>().InstancePerRequest();
 
             #endregion Cadastro
 

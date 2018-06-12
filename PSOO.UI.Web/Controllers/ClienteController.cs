@@ -48,8 +48,7 @@ namespace PSOO.UI.Web.Controllers
             return PartialView("_ListaClientes", listaclientesVm);
         }
 
-        public ActionResult Create()
-        {
+        public ActionResult Create()  {
             var clienteCreateViewModel = _clienteAppService.GetNewCliente();
             return View(clienteCreateViewModel);
         }

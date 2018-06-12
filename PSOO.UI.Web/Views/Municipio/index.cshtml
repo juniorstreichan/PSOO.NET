@@ -1,16 +1,16 @@
-﻿@model PSOO.Application.ViewModel.ClienteIndexViewModel
+﻿@model PSOO.Application.ViewModel.MunicipioIndexViewModel
 
 <div class="row">
     <div class="col-sm-12">
         <div class="widget-box">
             <div class="widget-header">
-                <h4 class="widget-title">Consulta de Clientes</h4>
+                <h4 class="widget-title">Consulta de Municipios</h4>
             </div>
 
             <div class="widget-body">
                 <div class="widget-main no-padding">
-                    @using (Ajax.BeginForm("Pesquisar", "Cliente", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "divListaCliente" }))
-                    {
+                    @using (Ajax.BeginForm("Pesquisar", "Municipio", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "divListaMunicipio" }))
+                     {
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-horizontal">
@@ -22,14 +22,14 @@
                             </div>
                             @Html.Button("Consultar", new { @class = "btn btn-minier btn-success", @style = "margin-top: 6px;" })
 
-                            @Html.ActionLink("Novo", "Create", "Cliente", "", new { @class = "btn btn-minier btn-primary", @style = "margin-top: 6px;" })
+                            @Html.ActionLink("Novo", "Create", "Municipio", "", new { @class = "btn btn-minier btn-primary", @style = "margin-top: 6px;" })
                         </div>
                     </div>
-            }
+                     }
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-@Html.Action("ListaClientes", "Cliente")
+@Html.Action("ListaMunicipios", "Municipio")

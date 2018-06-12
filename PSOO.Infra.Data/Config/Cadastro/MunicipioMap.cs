@@ -14,8 +14,8 @@ namespace PSOO.Infra.Data.Config.Cadastro
         {
             Schema("dbo");
             Table("Municipio");
-            Id(x => x.MunicipioId).Column("Municipioid").GeneratedBy.Identity();
-            Map(x => x.Nome).Column("nome").Not.Nullable().Length(Municipio.NomeMaxLength);
+            Id(x => x.MunicipioId).Column("MunicipioId").GeneratedBy.Identity();
+            Map(x => x.Nome).Column("Nome").Not.Nullable().Length(Municipio.NomeMaxLength);
             Map(x => x.CodigoIBGE).Column("CodigoIBGE").Not.Nullable().Length(Municipio.CodigoIBGEMaxLength);
             Map(x => x.SiglaUf).Column("SiglaUF").Not.Nullable().Length(Municipio.SiglaUFMaxLength);
             Map(x => x.CodigoIBGEUF).Column("CodigoIBGEUF").Not.Nullable().Length(Municipio.CodigoIBGEUFMaxLength);

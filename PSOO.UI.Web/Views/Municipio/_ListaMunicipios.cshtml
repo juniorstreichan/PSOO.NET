@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PSOO.Application.ViewModel.MunicipioIndexListViewModel>
+<div id="divListaMunicipio">
+    <div class="row">
+        <div class="col-xs-12">
+            <table id="simple-table" class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CodigoIBGE</th>
+                        <th>SiglaUF</th>
+                        <th>CodigoIBGEUF</th>
+                        <th>NomePais</th>
+                        <th>CodigoPaisBACEN</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CodigoIBGE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SiglaUF)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CodigoIBGEUF)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NomePais)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CodigoPaisBACEN)
+                        </td>
+                        <td>
+                            <div class="hidden-sm hidden-xs btn-group">
+                                @Html.ActionLink("Editar", "Edit", new { municipioId = item.MunicipioId }, new { @class = "btn btn-xs btn-primary" })
+                                @Html.ActionLink("Excluir", "Delete", new { municipioId = item.MunicipioId }, new { @class = "btn btn-xs btn-danger" })
+                            </div>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

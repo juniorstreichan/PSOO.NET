@@ -23,6 +23,10 @@ namespace PSOO.Application.Services.Cadastro
             _uow = unitOfWork;
         }
 
+        public MunicipioAppService( )
+        { 
+        }
+
         public MunicipioIndexViewModel GetMunicipioIndexViewModel()
         {
             var MunicipioIndexViewModel = new MunicipioIndexViewModel();
