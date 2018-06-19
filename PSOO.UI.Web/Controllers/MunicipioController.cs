@@ -8,12 +8,7 @@ namespace PSOO.UI.Web.Controllers
 {
     public class MunicipioController : Controller
     {
-        private readonly IMunicipioAppService _MunicipioAppService;
-
-        public MunicipioController()
-        {
-
-        }
+        private readonly IMunicipioAppService _municipioAppService;
 
         private void AddErrorsToModelState(List<KeyValuePair<string, string>> erros)
         {
@@ -23,23 +18,23 @@ namespace PSOO.UI.Web.Controllers
                 ModelState.AddModelError(erro.Key, erro.Value);
         }
 
-        public MunicipioController(IMunicipioAppService MunicipioAppService)
+        public MunicipioController(IMunicipioAppService municipioAppService)
         {
-            _MunicipioAppService = MunicipioAppService;
+            _municipioAppService = municipioAppService;
         }
 
-        // GET: Municipio
+        // GET: Cliente
         public ActionResult Index()
         {
-            var MunicipioIndexViewModel = _MunicipioAppService.GetMunicipioIndexViewModel();
-            return View(MunicipioIndexViewModel);
+            var municipioIndexViewModel = _municipioAppService.GetMunicipioIndexViewModel();
+            return View(municipioIndexViewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Pesquisar(MunicipioIndexViewModel MunicipioIndexViewModel)
+        public ActionResult Pesquisar(MunicipioIndexViewModel municipioIndexViewModel)
         {
-            var listaMunicipioVm = _MunicipioAppService.GetMunicipioIndexListViewModel(MunicipioIndexViewModel);
+            var listaMunicipioVm = _municipioAppService.GetMunicipioIndexListViewModel(municipioIndexViewModel);
 
             if (Request.IsAjaxRequest())
                 return PartialView("_ListaMunicipios", listaMunicipioVm);
@@ -49,49 +44,49 @@ namespace PSOO.UI.Web.Controllers
 
         public ActionResult ListaMunicipios()
         {
-            var listaMunicipiosVm = _MunicipioAppService.GetMunicipioIndexListViewModelEmpty();
-            return PartialView("_ListaMunicipios", listaMunicipiosVm);
+            var listamunicipiosVm = _municipioAppService.GetMunicipioIndexListViewModelEmpty();
+            return PartialView("_ListaMunicipios", listamunicipiosVm);
         }
 
         public ActionResult Create()
         {
-            var MunicipioCreateViewModel = _MunicipioAppService.GetNewMunicipio();
-            return View(MunicipioCreateViewModel);
+            var municipioCreateViewModel = _municipioAppService.GetNewMunicipio();
+            return View(municipioCreateViewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(MunicipioCreateViewModel MunicipioCreateViewModel)
+        public ActionResult Create(MunicipioCreateViewModel municipioCreateViewModel)
         {
             List<KeyValuePair<string, string>> erros = null;
-            var sucesso = _MunicipioAppService.CreateMunicipio(MunicipioCreateViewModel, out erros);
+            var sucesso = _municipioAppService.CreateMunicipio(municipioCreateViewModel, out erros);
             if (sucesso)
             {
                 TempData["Titulo"] = "Sucesso!";
                 TempData["Mensagem"] = "Dados inseridos com sucesso!";
-                TempData["Link"] = Url.Action("Index", "Curso");
+                TempData["Link"] = Url.Action("Index", "Municipio");
             }
             else
             {
                 AddErrorsToModelState(erros);
             }
-            return View(MunicipioCreateViewModel);
+            return View(municipioCreateViewModel);
         }
 
-        public ActionResult Edit(int? MunicipioId)
+        public ActionResult Edit(int? municipioId)
         {
-            if (!MunicipioId.HasValue) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            if (!municipioId.HasValue) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var MunicipioEditViewModel = _MunicipioAppService.GetEditMunicipio(MunicipioId.Value);
-            return View(MunicipioEditViewModel);
+            var municipioEditViewModel = _municipioAppService.GetEditMunicipio(municipioId.Value);
+            return View(municipioEditViewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(MunicipioEditViewModel MunicipioEditViewModel)
+        public ActionResult Edit(MunicipioEditViewModel municipioEditViewModel)
         {
             List<KeyValuePair<string, string>> erros = null;
-            var sucesso = _MunicipioAppService.EditMunicipio(MunicipioEditViewModel, out erros);
+            var sucesso = _municipioAppService.EditMunicipio(municipioEditViewModel, out erros);
             if (sucesso)
             {
                 TempData["Titulo"] = "Sucesso!";
@@ -103,23 +98,23 @@ namespace PSOO.UI.Web.Controllers
                 AddErrorsToModelState(erros);
             }
 
-            return View(MunicipioEditViewModel);
+            return View(municipioEditViewModel);
         }
 
-        public ActionResult Delete(int? MunicipioId)
+        public ActionResult Delete(int? municipioId)
         {
-            if (!MunicipioId.HasValue) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            if (!municipioId.HasValue) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var MunicipioDeleteViewModel = _MunicipioAppService.GetDeleteMunicipio(MunicipioId.Value);
-            return View(MunicipioDeleteViewModel);
+            var municipioDeleteViewModel = _municipioAppService.GetDeleteMunicipio(municipioId.Value);
+            return View(municipioDeleteViewModel);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int MunicipioId)
+        public ActionResult DeleteConfirmed(int municipioId)
         {
             List<KeyValuePair<string, string>> erros = null;
-            var sucesso = _MunicipioAppService.DeleteMunicipio(MunicipioId, out erros);
+            var sucesso = _municipioAppService.DeleteMunicipio(municipioId, out erros);
             if (sucesso)
             {
                 return RedirectToAction("Index", "Municipio");
@@ -127,8 +122,8 @@ namespace PSOO.UI.Web.Controllers
             else
             {
                 AddErrorsToModelState(erros);
-                var cursoDeleteViewModel = _MunicipioAppService.GetDeleteMunicipio(MunicipioId);
-                return View(cursoDeleteViewModel);
+                var municipioDeleteViewModel = _municipioAppService.GetDeleteMunicipio(municipioId);
+                return View(municipioDeleteViewModel);
             }
         }
     }

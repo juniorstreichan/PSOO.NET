@@ -52,19 +52,19 @@ namespace PSOO.Domain.Entity.Cadastro
             RuleFor(x => x.MunicipioId).NotNull();
 
             RuleFor(x => x.Nome).NotNull().WithMessage(Municipio.NomeNotNull_Msg);
-            RuleFor(x => x.Nome).Length(3, Municipio.NomeMaxLength).WithMessage(Municipio.NomeMaxLength_Msg);
+            RuleFor(x => x.Nome).Length(2, Municipio.NomeMaxLength).WithMessage(Municipio.NomeMaxLength_Msg);
 
             RuleFor(x => x.CodigoIBGE).NotNull().WithMessage(Municipio.CodigoIBGENotNull_Msg);
-            RuleFor(x => x.CodigoIBGE).Length(3, Municipio.CodigoIBGEMaxLength).WithMessage(Municipio.CodigoIBGEMaxLength_Msg);
+            RuleFor(x => x.CodigoIBGE).Length(2, Municipio.CodigoIBGEMaxLength).WithMessage(Municipio.CodigoIBGEMaxLength_Msg);
 
             RuleFor(x => x.SiglaUf).NotNull().WithMessage(Municipio.SiglaUFNotNull_Msg);
-            RuleFor(x => x.SiglaUf).Length(3, Municipio.SiglaUFMaxLength).WithMessage(Municipio.SiglaUFMaxLength_Msg);
+            RuleFor(x => x.SiglaUf).Length(2, Municipio.SiglaUFMaxLength).WithMessage(Municipio.SiglaUFMaxLength_Msg);
 
             RuleFor(x => x.CodigoIBGEUF).NotNull().WithMessage(Municipio.CodigoIBGEUFNotNull_Msg);
-            RuleFor(x => x.CodigoIBGEUF).Length(3, Municipio.CodigoIBGEUFMaxLength).WithMessage(Municipio.CodigoIBGEUFMaxLength_Msg);
+            RuleFor(x => x.CodigoIBGEUF).Length(2, Municipio.CodigoIBGEUFMaxLength).WithMessage(Municipio.CodigoIBGEUFMaxLength_Msg);
 
             RuleFor(x => x.NomePais).NotNull().WithMessage(Municipio.NomePaisNotNull_Msg);
-            RuleFor(x => x.NomePais).Length(3, Municipio.NomePaisMaxLength).WithMessage(Municipio.NomePaisMaxLength_Msg);
+            RuleFor(x => x.NomePais).Length(2, Municipio.NomePaisMaxLength).WithMessage(Municipio.NomePaisMaxLength_Msg);
 
         }
 

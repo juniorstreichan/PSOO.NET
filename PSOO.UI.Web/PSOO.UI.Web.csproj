@@ -222,6 +222,9 @@
     <Content Include="Views\Cliente\Delete.cshtml" />
     <Content Include="Views\Municipio\index.cshtml" />
     <Content Include="Views\Municipio\_ListaMunicipios.cshtml" />
+    <Content Include="Views\Municipio\Create.cshtml" />
+    <Content Include="Views\Municipio\Delete.cshtml" />
+    <Content Include="Views\Municipio\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

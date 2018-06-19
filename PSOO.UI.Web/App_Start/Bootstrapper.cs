@@ -43,6 +43,9 @@ namespace PSOO.UI.Web.App_Start
 
             builder.RegisterType<ClienteService>().As<IClienteService>().InstancePerRequest();
             builder.RegisterType<ClienteValidator>().As<IClienteValidator>().InstancePerRequest();
+
+            builder.RegisterType<MunicipioService>().As<IMunicipioService>().InstancePerRequest();
+            builder.RegisterType<MunicipioValidator>().As<IMunicipioValidator>().InstancePerRequest();
             #endregion Cadastro
 
             #endregion Domain Services

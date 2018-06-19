@@ -1,5 +1,6 @@
 ﻿@model PSOO.Application.ViewModel.MunicipioIndexViewModel
 
+
 <div class="row">
     <div class="col-sm-12">
         <div class="widget-box">
@@ -10,22 +11,22 @@
             <div class="widget-body">
                 <div class="widget-main no-padding">
                     @using (Ajax.BeginForm("Pesquisar", "Municipio", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "divListaMunicipio" }))
-                     {
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-horizontal">
-                        <br />
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
-                            <div class="col-md-4">
-                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                            </div>
-                            @Html.Button("Consultar", new { @class = "btn btn-minier btn-success", @style = "margin-top: 6px;" })
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-horizontal">
+                            <br />
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                                @Html.Button("Consultar", new { @class = "btn btn-minier btn-success", @style = "margin-top: 6px;" })
 
-                            @Html.ActionLink("Novo", "Create", "Municipio", "", new { @class = "btn btn-minier btn-primary", @style = "margin-top: 6px;" })
+                                @Html.ActionLink("Novo", "Create", "Municipio", "", new { @class = "btn btn-minier btn-primary", @style = "margin-top: 6px;" })
+                            </div>
                         </div>
-                    </div>
-                     }
+                    }
                 </div>
             </div>
         </div>
@@ -33,3 +34,5 @@
 </div>
 
 @Html.Action("ListaMunicipios", "Municipio")
+
+

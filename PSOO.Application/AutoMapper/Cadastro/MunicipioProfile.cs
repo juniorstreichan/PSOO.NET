@@ -20,7 +20,7 @@ namespace PSOO.Application.AutoMapper.Cadastro
 
             CreateMap<MunicipioEditViewModel, Municipio>();
 
-            CreateMap<MunicipioDeleteViewModel, Municipio>();
+
         }
     }
 }

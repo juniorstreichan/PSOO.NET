@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Entity\Cadastro\Municipio.cs" />
     <Compile Include="Entity\Cadastro\Cliente.cs" />
+    <Compile Include="Entity\Cadastro\Pais.cs" />
     <Compile Include="Entity\Common\BaseClass.cs" />
     <Compile Include="Interfaces\Cadastro\IMunicipioRepository.cs" />
     <Compile Include="Interfaces\Cadastro\IClienteRepository.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Interfaces\Cadastro\IClienteService.cs" />
     <Compile Include="Interfaces\Cadastro\IMunicipioValidator.cs" />
     <Compile Include="Interfaces\Cadastro\IClienteValidator.cs" />
+    <Compile Include="Interfaces\Cadastro\IPaisRepository.cs" />
     <Compile Include="Interfaces\Common\IUnitOfWork.cs" />
     <Compile Include="Interfaces\Common\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Common\IServiceBase.cs" />
